@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            text-align: center;
+            position: relative;
+        }
+
+        .button>div:nth-child(2) {
+            width: 0;
+            height: 2px;
+            background-color: rgb(92, 91, 90);
+            transition: all 0.35s;
+            position: absolute;
+            left: auto;
+            right: 0px;
+        }
+
+        .button:hover>div:nth-child(2) {
+            width: 4em;
+            left: 0;
+            right: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="button">
+        <div>你好世界</div>
+        <div></div>
+    </div>
+
+</body>
+
+
+
+</html>

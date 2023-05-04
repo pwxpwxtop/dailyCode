@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .box_3d {
+            perspective: 800;
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            animation: box3d;
+            animation-timing-function: linear;
+            animation-duration: 10s;
+            animation-direction: normal;
+            transform-origin: 0px 0px;
+            animation-iteration-count: infinite;
+
+
+        }
+
+        @keyframes box3d {
+            from {
+                transform: rotate3d(1, 1, 0, 0deg);
+            }
+
+            to {
+                transform: rotate3d(1, 1, 0, 360deg);
+            }
+        }
+
+        .box_3d>div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+        .div_1 {
+            transform: translateZ(100px);
+
+        }
+
+        .div_2 {
+            transform: translateZ(-100px) rotateY(-180deg);
+
+        }
+
+        .div_3 {
+            transform: translateX(100px) rotateY(90deg);
+
+        }
+
+        .div_4 {
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+
+        .div_5 {
+            transform: translateY(100px) rotateX(90deg);
+        }
+
+        .div_6 {
+            transform: translateY(-100px) rotateX(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" style="width:100vw;height: 100vh;object-fit: cover;position: absolute;" src="./image/1.jpg">
+    <div class="box_3d">
+        <div class="div_1" onclick="selectImg(1)">
+            <img src="./image/1.jpg">
+        </div>
+        <div class="div_2" onclick="selectImg(2)">
+            <img src="./image/2.jpg">
+        </div>
+        <div class="div_3" onclick="selectImg(3)">
+            <img src="./image/3.jpg">
+        </div>
+        <div class="div_4" onclick="selectImg(4)">
+            <img src="./image/4.jpg">
+        </div>
+        <div class="div_5" onclick="selectImg(5)">
+            <img src="./image/5.jpg">
+        </div>
+        <div class="div_6" onclick="selectImg(6)">
+            <img src="./image/6.jpg">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
+    const selectImg = (index) => {
+        let element = document.getElementById('img')
+        element.setAttribute('src', `./image/${images[index - 1]}`)
+    }
+
+
+</script>
+
+</html>
